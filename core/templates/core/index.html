@@ -1,0 +1,32 @@
+{% extends 'core/base.html' %}
+{% block content %}
+
+<div class="max-w-xs flex flex-col mx-auto">
+
+    <label for="Language" class="block mb-2 text-sm font-bold text-gray-900">Select Language</label>
+    <select id="Language"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+        <option selected value="py">Python</option>
+        <option value="js">JavaScript</option>
+        <option value="php">PHP</option>
+        <option value="html">HTML</option>
+    </select>
+
+    <br>
+
+    <button class="text-white bg-green-500 rounded-full px-3 py-3 text-lg">Run Code</button>
+</div>
+
+<br>
+
+
+<div class="grid sm:grid-cols-2 gap-2 px-2">
+    <div id="editor" class="mx-10">print("hello world")</div>
+    <div id="output" class="bg-black text-white">
+        hello world
+    </div>
+</div>
+
+
+
+{% endblock %}
