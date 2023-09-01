@@ -1,28 +1,117 @@
 {% extends 'core/base.html' %}
 {% block content %}
 
+<div class="inline-flex justify-between items-center py-4 px-8 bg-gray-200 w-full gap-2">
+    <div class="inline-flex gap-2">
+        <div>
+            <label for="Language" class="block mb-2 text-sm font-bold text-gray-900">Language</label>
+            <select id="Language"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <option selected value="py">Python</option>
+                <option value="js">JavaScript</option>
+                <option value="php">PHP</option>
+                <option value="html">HTML</option>
+            </select>
+        </div>
+        <div>
+            <label for="Theme" class="block mb-2 text-sm font-bold text-gray-900">Theme</label>
+            <select id="Theme"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <option selected value="chrome">Chrome</option>
+                <option value="clouds">Clouds</option>
+                <option value="dreamweaver">Dreamweaver</option>
+                <option value="gitHub">GitHub</option>
+                <option value="xcode">XCode</option>
+                <option value="dracula">Dracula</option>
+                <option value="krTheme">krTheme</option>
+                <option value="monokai">Monokai</option>
+                <option value="terminal">Terminal</option>
+                <option value="twilight">Twilight</option>
+            </select>
+        </div>
+        <div>
+            <label for="font" class="block mb-2 text-sm font-bold text-gray-900">Font Size</label>
+            <select id="font"
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <option selected value="14">Basic</option>
+                <option value="10">Small</option>
+                <option value="18">Big</option>
+                <option value="22">Large</option>
+                <option value="24">Insane</option>
+            </select>
+        </div>
+    </div>
+    <div>
+        <div class="inline-flex gap-2">
+            <button
+                class="text-white bg-green-500 rounded-full px-2 py-2 text-lg inline-flex items-center justify-between gap-2">
+                <svg class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    zn_id="364">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" zn_id="365"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" zn_id="366"></g>
+                    <g id="SVGRepo_iconCarrier" zn_id="367">
+                        <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                            fill="#FFFFFF" zn_id="368"></path>
+                        <path
+                            d="M15.4137 13.059L10.6935 15.8458C9.93371 16.2944 9 15.7105 9 14.7868V9.21316C9 8.28947 9.93371 7.70561 10.6935 8.15419L15.4137 10.941C16.1954 11.4026 16.1954 12.5974 15.4137 13.059Z"
+                            fill="#FFFFFF"></path>
+                    </g>
+                </svg>
+            </button>
+            <button
+                class="text-white bg-red-500 rounded-full px-2 py-2 text-lg inline-flex items-center justify-between gap-2">
+                <svg class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    zn_id="515">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0" zn_id="516"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" zn_id="517"></g>
+                    <g id="SVGRepo_iconCarrier" zn_id="518">
+                        <path opacity="0.5"
+                            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                            fill="#FFFFFF" zn_id="519"></path>
+                        <path
+                            d="M8.07612 8.61732C8 8.80109 8 9.03406 8 9.5V14.5C8 14.9659 8 15.1989 8.07612 15.3827C8.17761 15.6277 8.37229 15.8224 8.61732 15.9239C8.80109 16 9.03406 16 9.5 16C9.96594 16 10.1989 16 10.3827 15.9239C10.6277 15.8224 10.8224 15.6277 10.9239 15.3827C11 15.1989 11 14.9659 11 14.5V9.5C11 9.03406 11 8.80109 10.9239 8.61732C10.8224 8.37229 10.6277 8.17761 10.3827 8.07612C10.1989 8 9.96594 8 9.5 8C9.03406 8 8.80109 8 8.61732 8.07612C8.37229 8.17761 8.17761 8.37229 8.07612 8.61732Z"
+                            fill="#FFFFFF"></path>
+                        <path
+                            d="M13.0761 8.61732C13 8.80109 13 9.03406 13 9.5V14.5C13 14.9659 13 15.1989 13.0761 15.3827C13.1776 15.6277 13.3723 15.8224 13.6173 15.9239C13.8011 16 14.0341 16 14.5 16C14.9659 16 15.1989 16 15.3827 15.9239C15.6277 15.8224 15.8224 15.6277 15.9239 15.3827C16 15.1989 16 14.9659 16 14.5V9.5C16 9.03406 16 8.80109 15.9239 8.61732C15.8224 8.37229 15.6277 8.17761 15.3827 8.07612C15.1989 8 14.9659 8 14.5 8C14.0341 8 13.8011 8 13.6173 8.07612C13.3723 8.17761 13.1776 8.37229 13.0761 8.61732Z"
+                            fill="#FFFFFF"></path>
+                    </g>
+                </svg>
+            </button>
+            <button
+                class="text-white bg-blue-500 rounded-full px-2 py-2 text-lg inline-flex items-center justify-between gap-2">
+                <svg class="h-10 w-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <circle opacity="0.5" cx="12" cy="12" r="10" fill="#FFFFFF"></circle>
+                        <path
+                            d="M16.4017 6.28616C16.4017 5.98121 16.217 5.70662 15.9346 5.59158C15.6522 5.47653 15.3283 5.54393 15.1152 5.76208L14.3647 6.53037C12.244 5.55465 9.66551 5.95905 7.92796 7.7378C5.69068 10.0281 5.69068 13.7344 7.92796 16.0247C10.1748 18.3248 13.8252 18.3248 16.072 16.0247C17.3754 14.6904 17.9168 12.8779 17.7055 11.1507C17.6552 10.7396 17.2812 10.447 16.87 10.4973C16.4589 10.5476 16.1663 10.9217 16.2166 11.3328C16.3757 12.6335 15.9667 13.9859 14.999 14.9765C13.3407 16.6742 10.6593 16.6742 9.00097 14.9765C7.33301 13.269 7.33301 10.4935 9.00097 8.78596C10.1467 7.61303 11.7795 7.25143 13.225 7.69705L12.4635 8.47659C12.2527 8.69245 12.1917 9.01364 12.3088 9.29174C12.4259 9.56984 12.6983 9.75067 13 9.75067H15.6517C16.0659 9.75067 16.4017 9.41489 16.4017 9.00067V6.28616Z"
+                            fill="#FFFFFF"></path>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+</div>
+
 <div class="max-w-xs flex flex-col mx-auto">
 
-    <label for="Language" class="block mb-2 text-sm font-bold text-gray-900">Select Language</label>
-    <select id="Language"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-        <option selected value="py">Python</option>
-        <option value="js">JavaScript</option>
-        <option value="php">PHP</option>
-        <option value="html">HTML</option>
-    </select>
+
+
 
     <br>
 
-    <button class="text-white bg-green-500 rounded-full px-3 py-3 text-lg">Run Code</button>
+
 </div>
 
 <br>
 
 
 <div class="grid sm:grid-cols-2 gap-2 px-2">
-    <div id="editor" class="mx-10">print("hello world")</div>
-    <div id="output" class="bg-black text-white">
+    <div id="editor" class="mx-10 border border-gray-300">print("hello world")</div>
+    <div id="output" class="bg-black text-white p-2">
         hello world
     </div>
 </div>

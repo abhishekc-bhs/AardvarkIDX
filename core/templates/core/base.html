@@ -289,8 +289,10 @@
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/tw-elements.umd.min.js"></script>
     <script>
         var editor = ace.edit("editor");
-        editor.setTheme("ace/theme/clouds");
+        editor.setTheme("ace/theme/chrome");
         editor.session.setMode("ace/mode/python");
+        editor.setFontSize(14);
+
 
         var languageSelect = document.getElementById("Language");
         languageSelect.addEventListener("change", function () {
@@ -302,8 +304,49 @@
                 "html": "html"
             };
 
+
             var selectedMode = modeMapping[selectedLanguage];
             editor.session.setMode("ace/mode/" + selectedMode);
+        });
+
+        var themeSelect = document.getElementById("Theme");
+        themeSelect.addEventListener("change", function () {
+            var selectedTheme = themeSelect.value;
+            var modeMapping = {
+                "chrome": "chrome",
+                "clouds": "clouds",
+                "dreamweaver": "dreamweaver",
+                "gitHub": "gitHub",
+                "xcode": "xcode",
+                "dracula": "dracula",
+                "krTheme": "krTheme",
+                "monokai": "monokai",
+                "terminal": "terminal",
+                "twilight": "twilight",
+            };
+
+
+            var selectedMode = modeMapping[selectedTheme];
+            editor.setTheme("ace/theme/" + selectedMode);
+        });
+
+        var fontSelect = document.getElementById("font");
+        fontSelect.addEventListener("change", function () {
+            var selectedFont = fontSelect.value;
+            var modeMapping = {
+                "10": "10",
+                "14": "14",
+                "18": "18",
+                "22": "22",
+                "24": "24"
+            };
+
+
+            var selectedMode = modeMapping[selectedFont];
+            console.log(selectedMode);
+            editor.setOptions({
+                fontSize: selectedMode + 'pt'
+            });
         });
     </script>
 </body>
