@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="inline-flex justify-between items-center py-4 px-8 bg-gray-200 w-full gap-2">
-    <div class="inline-flex gap-2">
+    <div class="inline-flex gap-4">
         <div>
             <label for="Language" class="block mb-2 text-sm font-bold text-gray-900">Language</label>
             <select id="Language"
@@ -119,56 +119,73 @@
                 </div>
                 <div class="flex flex-col flex-1 px-3 mt-6">
                     <div class="space-y-4">
-                        <nav class="flex-1 space-y-1">
-                            <a href="#" title=""
-                                class="inline-flex justify-center align-center gap-2 w-full items-center px-4 py-2 text-sm font-medium text-white transition-all duration-200 bg-emerald-600 rounded-lg group">
-                                <svg viewBox="0 0 24 24" class="h-10 w-10 text-white" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path opacity="0.5"
-                                            d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
-                                            fill="#FFFFFF"></path>
-                                        <path
-                                            d="M12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9L11.25 11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15L12.75 12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z"
-                                            fill="#FFFFFF"></path>
-                                    </g>
-                                </svg>
-                                Create New File
-                            </a>
+                        <nav class="flex-1 space-y-0">
+                            <div class="flex justify-between align-center mx-auto items-center gap-1">
+                                <button data-modal-target="newFileModal" data-modal-toggle="newFileModal"
+                                    class="inline-flex justify-center align-center gap-1 w-full items-center px-2 py-2 text-sm font-medium text-white transition-all duration-200 bg-emerald-600 rounded-full group">
+                                    <svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path opacity="0.5"
+                                                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                                fill="#FFFFFF"></path>
+                                            <path
+                                                d="M12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9L11.25 11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15L12.75 12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z"
+                                                fill="#FFFFFF"></path>
+                                        </g>
+                                    </svg>
+                                    New File
+                                </button>
+                                <button data-modal-target="newDirModal" data-modal-toggle="newDirModal"
+                                    class="inline-flex justify-center align-center gap-1 w-full items-center px-2 py-2 text-sm font-medium text-white transition-all duration-200 bg-blue-600 rounded-full group">
+                                    <svg viewBox="0 0 24 24" class="h-5 w-5 text-white" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round">
+                                        </g>
+                                        <g id="SVGRepo_iconCarrier">
+                                            <path opacity="0.5"
+                                                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z"
+                                                fill="#FFFFFF"></path>
+                                            <path
+                                                d="M12.75 9C12.75 8.58579 12.4142 8.25 12 8.25C11.5858 8.25 11.25 8.58579 11.25 9L11.25 11.25H9C8.58579 11.25 8.25 11.5858 8.25 12C8.25 12.4142 8.58579 12.75 9 12.75H11.25V15C11.25 15.4142 11.5858 15.75 12 15.75C12.4142 15.75 12.75 15.4142 12.75 15L12.75 12.75H15C15.4142 12.75 15.75 12.4142 15.75 12C15.75 11.5858 15.4142 11.25 15 11.25H12.75V9Z"
+                                                fill="#FFFFFF"></path>
+                                        </g>
+                                    </svg>
+                                    New Dir
+                                </button>
+                            </div>
 
-                            <a href="#"
-                                class="inline-flex items-center gap-2 w-full px-4 py-1 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-black rounded-lg hover:bg-gray-200 group">
-                                <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path
-                                            d="M10 17L8 15L10 13M14 13L16 15L14 17M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V9M13 3L19 9M13 3V8C13 8.55228 13.4477 9 14 9H19"
-                                            stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </g>
-                                </svg>
-                                index.html
-                            </a>
-                            <a href="#"
-                                class="inline-flex items-center gap-2 w-full px-4 py-1 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-black rounded-lg hover:bg-gray-200 group">
-                                <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                    <g id="SVGRepo_iconCarrier">
-                                        <path
-                                            d="M10 17L8 15L10 13M14 13L16 15L14 17M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V9M13 3L19 9M13 3V8C13 8.55228 13.4477 9 14 9H19"
-                                            stroke="#000000" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round"></path>
-                                    </g>
-                                </svg>
-                                main.py
-                            </a>
+                            <div>
+                                <h2 class="px-2 text-black text-sm mt-4 mb-2">Explorer</h2>
+                            </div>
+                            {% if files %}
+                                {% for files in dir %}
+                                    <a href="#"
+                                        class="inline-flex items-center gap-2 w-full px-4 py-1 text-sm font-medium transition-all duration-200 text-gray-900 hover:text-black rounded-lg hover:bg-gray-200 group">
+                                        <svg class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                                            <g id="SVGRepo_iconCarrier">
+                                                <path
+                                                    d="M10 17L8 15L10 13M14 13L16 15L14 17M13 3H8.2C7.0799 3 6.51984 3 6.09202 3.21799C5.71569 3.40973 5.40973 3.71569 5.21799 4.09202C5 4.51984 5 5.0799 5 6.2V17.8C5 18.9201 5 19.4802 5.21799 19.908C5.40973 20.2843 5.71569 20.5903 6.09202 20.782C6.51984 21 7.0799 21 8.2 21H15.8C16.9201 21 17.4802 21 17.908 20.782C18.2843 20.5903 18.5903 20.2843 18.782 19.908C19 19.4802 19 18.9201 19 17.8V9M13 3L19 9M13 3V8C13 8.55228 13.4477 9 14 9H19"
+                                                    stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                            </g>
+                                        </svg>
+                                        index.html
+                                    </a>
+                                {% endfor %}
+                            {% else %}
+                                <p class="text-black text-xs text-center text-gray-600 my-4">No Files Present</p>
+                            {% endif %}
+
                         </nav>
+
                     </div>
                 </div>
             </div>
@@ -187,6 +204,65 @@
                     </div>
                 </div>
             </main>
+        </div>
+    </div>
+
+    <!-- Main modal -->
+    <div id="newFileModal" tabindex="-1" aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full max-w-2xl max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow">
+                <div class="p-6 space-y-2">
+                    <form action="">
+                        <div>
+                            <label for="first_name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">File Name</label>
+                            <input type="text" id="file_name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                placeholder="index.html" required>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="flex items-center p-6 space-x-2 rounded-b">
+                    <button data-modal-hide="newFileModal" type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-full text-sm px-5 py-2.5 text-center ">
+                        Add</button>
+                    <button data-modal-hide="newFileModal" type="button"
+                        class="text-gray-500 bg-white hover:bg-gray-100  rounded-full border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main modal -->
+    <div id="newDirModal" tabindex="-1" aria-hidden="true"
+        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        <div class="relative w-full max-w-2xl max-h-full">
+            <!-- Modal content -->
+            <div class="relative bg-white rounded-lg shadow">
+                <div class="p-6 space-y-2">
+                    <form action="">
+                        <div>
+                            <label for="first_name"
+                                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Directory
+                                Name</label>
+                            <input type="text" id="file_name"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                placeholder="core" required>
+                        </div>
+                    </form>
+                </div>
+                <!-- Modal footer -->
+                <div class="flex items-center p-6 space-x-2 rounded-b">
+                    <button data-modal-hide="newDirModal" type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800  font-medium rounded-full text-sm px-5 py-2.5 text-center ">
+                        Add</button>
+                    <button data-modal-hide="newDirModal" type="button"
+                        class="text-gray-500 bg-white hover:bg-gray-100  rounded-full border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 ">Close</button>
+                </div>
+            </div>
         </div>
     </div>
 
